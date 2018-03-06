@@ -1,16 +1,17 @@
 package edu.neumont.csc150.FinalProject.MilewskiP;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
 		
-	private Card deck[] = new Card[52];
+	private ArrayList<Card> Deck = new ArrayList<Card>();
 	private int counter;
 	
 	public Deck() {
-		for(int i = 0; i < deck.length; i++) {
+		for(int i = 0; i < 53; i++) {
 			Card c = new Card();
-			deck[i] = c;
+			Deck.add(c);
 			counter++;
 		}
 	}
@@ -23,8 +24,12 @@ public class Deck {
 		Random rand = new Random();
 		 int i = rand.nextInt(52);
 		 
-		Card f = deck[i];
+		Card f = Deck.get(i);
 		return f;
 		
+	}
+
+	public ArrayList<Card> getDeck() {
+		return Deck;
 	}
 }
